@@ -53,7 +53,7 @@ To get a local copy up and running follow these steps.
 ## GUIDE (SPANISH)
 
 ### HU13:
-+ Se hizo un endpoint "" el cual debe ser consumido estando autenticado como empleado (employee).
++ Se hizo un endpoint "/log" el cual debe ser consumido estando autenticado como empleado (employee).
 + El endpoint guarda en la base de datos Mongo un log de cambio de estado de una orden, el cual dicha información llega del microservicio de plazoleta (foodcourt-microservice)
 + Se valida que el estado anterior y el estado nuevo sean diferentes.
 
