@@ -1,5 +1,7 @@
 package com.pragma.powerup.traceabilitmicroservice.configuration;
 
+import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.FailCreatingRandomIdException;
+import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.FailValidatingRequiredVariableException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -43,6 +45,17 @@ public class ControllerAdvisor {
     public ResponseEntity<Map<String, String>> handleAuthenticationException(AuthenticationException noDataFoundException) {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, WRONG_CREDENTIALS_MESSAGE));
+    }
+
+    @ExceptionHandler(FailValidatingRequiredVariableException.class)
+    public ResponseEntity<Map<String, String>> handleFailValidatingRequiredVariableException(FailValidatingRequiredVariableException failValidatingRequiredVariableException) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, failValidatingRequiredVariableException.getMessage()));
+    }
+    @ExceptionHandler(FailCreatingRandomIdException.class)
+    public ResponseEntity<Map<String, String>> handleFailCreatingRandomIdException(FailCreatingRandomIdException failCreatingRandomIdException) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, "Fail creating id of log"));
     }
 
 }

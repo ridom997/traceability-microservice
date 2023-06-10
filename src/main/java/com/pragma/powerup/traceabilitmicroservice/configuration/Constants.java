@@ -34,4 +34,6 @@ public class Constants {
     public static final String READY_ORDER_STATUS_VALUE = "READY";
     public static final String DELIVERED_ORDER_STATUS_VALUE = "DELIVERED";
     public static final String CANCELLED_ORDER_STATUS_VALUE = "CANCELLED";
+
+    public static final String MAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+(\\.[a-zA-Z0-9]+)$";
 }
