@@ -10,7 +10,7 @@ public class ArgumentValidations {
     }
 
     public static void validateString(String str, String nameVariable){
-        if(str == null)
+        if(str == null || str.isEmpty())
             throw new FailValidatingRequiredVariableException(nameVariable + NOT_PRESENT_MESSAGE);
     }
 
