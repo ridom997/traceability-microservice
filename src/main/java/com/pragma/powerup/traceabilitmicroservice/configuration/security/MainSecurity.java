@@ -32,7 +32,7 @@ public class MainSecurity {
         http.cors().and().csrf().disable()
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers( "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/health").permitAll()
-                        .requestMatchers("/log").hasRole("EMPLOYEE")
+                        .requestMatchers("/log").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin().disable()

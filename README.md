@@ -56,7 +56,8 @@ To get a local copy up and running follow these steps.
 + Se hizo un endpoint "/log" el cual debe ser consumido estando autenticado como empleado (employee).
 + El endpoint guarda en la base de datos Mongo un log de cambio de estado de una orden, el cual dicha información llega del microservicio de plazoleta (foodcourt-microservice)
 + Se valida que el estado anterior y el estado nuevo sean diferentes.
-
+### HU16:
++ Se modificó el endpoint "/log" para que solo sea consumido autenticado como ADMIN
 
 ## Tests
 
