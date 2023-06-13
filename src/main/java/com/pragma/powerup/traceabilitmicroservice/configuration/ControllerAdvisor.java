@@ -2,6 +2,7 @@ package com.pragma.powerup.traceabilitmicroservice.configuration;
 
 import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.FailCreatingRandomIdException;
 import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.FailValidatingRequiredVariableException;
+import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.NoDataFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -56,6 +57,11 @@ public class ControllerAdvisor {
     public ResponseEntity<Map<String, String>> handleFailCreatingRandomIdException(FailCreatingRandomIdException failCreatingRandomIdException) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, "Fail creating id of log"));
+    }
+    @ExceptionHandler(NoDataFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNoDataFoundException(NoDataFoundException noDataFoundException) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, noDataFoundException.getMessage()));
     }
 
 }

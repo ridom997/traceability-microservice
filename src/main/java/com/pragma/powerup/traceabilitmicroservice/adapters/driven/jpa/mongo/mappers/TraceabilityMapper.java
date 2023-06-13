@@ -11,4 +11,5 @@ import org.mapstruct.ReportingPolicy;
 public interface TraceabilityMapper {
     TraceabilityEntity toEntity(Traceability traceability);
 
+    Traceability toDomain(TraceabilityEntity traceabilityEntity);
 }
