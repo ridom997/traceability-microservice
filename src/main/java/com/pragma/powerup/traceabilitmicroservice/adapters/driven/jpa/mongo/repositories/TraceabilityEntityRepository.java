@@ -2,7 +2,6 @@ package com.pragma.powerup.traceabilitmicroservice.adapters.driven.jpa.mongo.rep
 
 import com.pragma.powerup.traceabilitmicroservice.adapters.driven.jpa.mongo.entity.TraceabilityEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 
