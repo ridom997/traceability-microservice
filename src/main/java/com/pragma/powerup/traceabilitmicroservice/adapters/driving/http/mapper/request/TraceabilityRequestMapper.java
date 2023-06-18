@@ -8,6 +8,6 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
-public interface DomainMapper {
+public interface TraceabilityRequestMapper {
     Traceability toTraceability(OrderLogDto orderLogDto);
 }
