@@ -2,10 +2,9 @@ package com.pragma.powerup.traceabilitmicroservice.domain.validations;
 
 import com.pragma.powerup.traceabilitmicroservice.domain.exceptions.FailValidatingRequiredVariableException;
 
-import static com.pragma.powerup.traceabilitmicroservice.configuration.Constants.NOT_PRESENT_MESSAGE;
-
 public class ArgumentValidations {
 
+    private static final String NOT_PRESENT_MESSAGE = " is not present";
     private ArgumentValidations() {
     }
 
